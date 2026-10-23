@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { describe, expect, it, vi } from 'vitest'
 import { Modal } from './Modal'
 
 function Harness({ onClose = () => {} }: { onClose?: () => void }) {

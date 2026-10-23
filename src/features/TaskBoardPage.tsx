@@ -8,7 +8,7 @@ import { useTaskFilters } from './hooks/useTaskFilteres'
 import { CURRENT_SCHEMA_VERSION } from './storage/migrations'
 import { useTasksActions, useTasksState } from './state/TasksContext'
 import type { Task, TaskDraft } from './types'
-import { filterAndSortTasks, hasActiveFilters } from './utils/filterTasks'
+import { filterAndSortTasks, hasActiveFilters } from './utlis/filterTasks'
 
 type FormTarget = { mode: 'closed' } | { mode: 'create' } | { mode: 'edit'; task: Task }
 
