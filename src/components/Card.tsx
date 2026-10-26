@@ -1,11 +1,7 @@
 import type { HTMLAttributes } from 'react'
 import { cn } from './cn'
 
-/**
- * Card is a composition primitive: `Card` is the surface, and `Card.Header`,
- * `Card.Body`, `Card.Footer` are optional slots. This avoids a props explosion
- * (title, subtitle, actions, footer...) on a single component.
- */
+
 export function Card({ className, ...rest }: HTMLAttributes<HTMLDivElement>) {
   return (
     <div

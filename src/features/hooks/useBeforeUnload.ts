@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-/** Shows the browser's "leave site?" prompt on refresh/close/navigation while `when` is true. */
+
 export function useBeforeUnload(when: boolean) {
   useEffect(() => {
     if (!when) return

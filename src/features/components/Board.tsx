@@ -3,7 +3,7 @@ import { STATUSES, type Status, type Task } from '../types'
 import { Column } from './Column'
 
 interface BoardProps {
-  /** Already filtered and sorted. */
+
   tasks: Task[]
   onEdit: (task: Task) => void
   onMove: (id: Task['id'], status: Status) => void

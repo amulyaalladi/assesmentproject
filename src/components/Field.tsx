@@ -17,11 +17,7 @@ export interface ControlA11yProps {
   'aria-required': true | undefined
 }
 
-/**
- * Shared shell for form controls: renders the <label>, hint and error message
- * and hands the control the ids/ARIA attributes it needs. Keeps TextInput,
- * TextArea and Select consistent without duplicating markup.
- */
+
 export function Field({
   label,
   error,

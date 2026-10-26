@@ -7,14 +7,14 @@ import { LIMITS } from '../utlis/validateTask'
 
 interface TaskFormModalProps {
   open: boolean
-  /** Task being edited, or null to create a new one. */
+
   task: Task | null
   onClose: () => void
   onSave: (draft: TaskDraft, existing: Task | null) => void
   onDelete?: (task: Task) => void
 }
 
-/** Mounts the dialog only while open so every open starts with fresh form state. */
+
 export function TaskFormModal(props: TaskFormModalProps) {
   if (!props.open) return null
   return <TaskFormDialog key={props.task?.id ?? 'new'} {...props} />
@@ -41,8 +41,6 @@ function TaskFormDialog({ task, onClose, onSave, onDelete }: TaskFormModalProps)
 
   useBeforeUnload(isDirty)
 
-  // Focus management for the inline confirmation: move focus into it when it
-  // appears, and back to the form when it is dismissed (its buttons unmount).
   const wasConfirming = useRef(false)
   useEffect(() => {
     if (confirm) keepEditingRef.current?.focus()
@@ -59,7 +57,7 @@ function TaskFormDialog({ task, onClose, onSave, onDelete }: TaskFormModalProps)
     e.preventDefault()
     const draft = validate()
     if (!draft) {
-      // Move focus to the first invalid field once React has rendered the error state.
+      
       requestAnimationFrame(() =>
         formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(),
       )

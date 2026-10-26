@@ -18,25 +18,19 @@ const TitleIdContext = createContext<string | undefined>(undefined)
 
 export interface ModalProps {
   open: boolean
-  /** Called on Escape, backdrop click or the close button. Parent decides whether to actually close. */
+  
   onRequestClose: () => void
-  /** Element to focus on open. Defaults to the first focusable element in the dialog. */
+ 
   initialFocusRef?: RefObject<HTMLElement | null>
   children: ReactNode
   className?: string
 }
 
-/**
- * Accessible modal dialog:
- * - role="dialog" + aria-modal + aria-labelledby (set via <Modal.Title>)
- * - focus moves in on open, is trapped with Tab/Shift+Tab, and is restored on close
- * - Escape and backdrop click request a close
- * - page scroll is locked while open
- */
+
 export function Modal({ open, onRequestClose, initialFocusRef, children, className }: ModalProps) {
   const titleId = useId()
   const dialogRef = useRef<HTMLDivElement>(null)
-  // Keep the latest callback without re-running the focus effect on every render.
+ 
   const closeRef = useRef(onRequestClose)
   const initialFocus = useRef(initialFocusRef)
   useEffect(() => {

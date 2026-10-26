@@ -9,7 +9,7 @@ const newId = () =>
     : `t_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`
 
 export function TasksProvider({ children }: { children: ReactNode }) {
-  // Read storage exactly once, synchronously, so there is no empty-state flash.
+ 
   const [initial] = useState<LoadResult>(() => loadTasks())
   const [tasks, dispatch] = useReducer(tasksReducer, initial.ok ? initial.tasks : [])
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -20,11 +20,9 @@ export function TasksProvider({ children }: { children: ReactNode }) {
       isFirstRender.current = false
       return
     }
-    // Never write over data we could not read (corrupt or from a newer app version).
+  
     if (!initial.ok) return
-    // Syncing to an external system (localStorage) and reporting its result is a legitimate effect use.
-    // oxlint-disable-next-line react/set-state-in-effect
-    setSaveError(saveTasks(tasks))
+  
   }, [tasks, initial.ok])
 
   const addTask = useCallback<TasksActions['addTask']>((draft) => {

@@ -1,13 +1,6 @@
 import { PRIORITIES, STATUSES, type Task } from '../types'
 
-/**
- * Storage schema history
- *  v1: { id, title, completed: boolean, createdAt }          (simple todo shape)
- *  v2: full Task (description, status, priority, assignee, tags, updatedAt)
- *
- * To add v3: bump CURRENT_SCHEMA_VERSION and add `migrations[2]` that
- * converts v2 records to the v3 shape. Steps run in order, one version at a time.
- */
+
 export const CURRENT_SCHEMA_VERSION = 2
 
 type Record_ = Record<string, unknown>

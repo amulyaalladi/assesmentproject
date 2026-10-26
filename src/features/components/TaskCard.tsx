@@ -17,10 +17,7 @@ interface TaskCardProps {
   onMove: (id: Task['id'], status: Status) => void
 }
 
-/**
- * Presentational card. Wrapped in memo: with stable onEdit/onMove props a card
- * only re-renders when its own `task` object changes, not when siblings do.
- */
+
 export const TaskCard = memo(function TaskCard({ task, onEdit, onMove }: TaskCardProps) {
   const onDragStart = (e: DragEvent<HTMLElement>) => {
     e.dataTransfer.setData(DRAG_MIME, task.id)

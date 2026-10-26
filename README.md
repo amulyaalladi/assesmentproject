@@ -73,7 +73,7 @@ Changing one task's status re-rendered every card (30 of 30 in a 30-task board).
 I used Claude (Anthropic) as a coding assistant for this assignment.
 
 **Where AI was used**
-- Generating the initial project structure, the component library (`src/components/ui`), the task state layer, the versioned storage/migration layer, the tests and the first drafts of these docs.
+- Generating the initial project structure, the component library (`src/components`), the task state layer, the versioned storage/migration layer, the tests and the first drafts of these docs.
 - Debugging help when I hit issues while running the app.
 
 **What I changed or fixed after reviewing the generated code**

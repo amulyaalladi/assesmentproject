@@ -3,11 +3,11 @@ import type { Status, Task, TaskDraft } from '../types'
 
 export interface TasksState {
   tasks: Task[]
-  /** Set when stored data could not be loaded. Persisting is disabled in that case so bad data is never overwritten. */
+  
   loadError: string | null
-  /** Set when the most recent save failed. */
+
   saveError: string | null
-  /** Schema version the data was migrated from during this page load, if any. */
+ 
   migratedFrom: number | null
 }
 
@@ -18,8 +18,7 @@ export interface TasksActions {
   deleteTask: (id: Task['id']) => void
 }
 
-// State and actions live in separate contexts: components that only dispatch
-// (e.g. cards) use stable `actions` and don't re-render when `tasks` change.
+
 export const TasksStateContext = createContext<TasksState | null>(null)
 export const TasksActionsContext = createContext<TasksActions | null>(null)
 

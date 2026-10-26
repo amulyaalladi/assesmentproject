@@ -21,7 +21,7 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   title?: string
 }
 
-/** Inline (non-ephemeral) message, e.g. "storage unavailable" banners. */
+
 export function Alert({ tone = 'info', title, className, children, ...rest }: AlertProps) {
   return (
     <div
@@ -41,10 +41,7 @@ interface ToastItem {
   message: string
 }
 
-/**
- * Renders ephemeral notifications in an aria-live region so screen readers
- * announce them without stealing focus. Toasts auto-dismiss and can be closed.
- */
+
 export function ToastProvider({
   children,
   durationMs = 4000,

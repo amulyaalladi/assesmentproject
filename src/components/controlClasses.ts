@@ -1,6 +1,6 @@
 import { cn } from './cn'
 
-/** Shared look for text inputs, textareas and selects. */
+
 export const controlClasses = (invalid: boolean) =>
   cn(
     'w-full rounded-md border bg-white px-3 py-2 text-sm text-slate-900 shadow-sm',
