@@ -6,7 +6,7 @@ export type TasksAction =
   | { type: 'move'; id: string; status: Status; now: string }
   | { type: 'delete'; id: string }
 
-/** Pure reducer: no clocks, no ids, no side effects, so it is deterministic and easy to test. */
+
 export function tasksReducer(tasks: Task[], action: TasksAction): Task[] {
   switch (action.type) {
     case 'add':
