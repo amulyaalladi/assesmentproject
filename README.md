@@ -1,16 +1,15 @@
 # Team Workflow Board
 
-A small Trello/Jira-style board built with **React 19 + TypeScript + Tailwind CSS v4**, backed by `localStorage`, with a hand-written component library (no UI kit).
+A small Trello/Jira-style board built with **React 19 + TypeScript + Tailwind CSS v4**, backed by `localStorage`
 
 ## Run it
 
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm test           # Vitest + React Testing Library
-npm run typecheck  # tsc -b
-npm run lint       # oxlint
-npm run build      # production build
+npm run test       # Vitest + React Testing Library
+npm run typecheck  # tsc --noEmit
+npm run lint       # eslint + prettier
 ```
 
 ## Features
@@ -79,12 +78,12 @@ I used Claude (Anthropic) as a coding assistant for this assignment.
 **What I changed or fixed after reviewing the generated code**
 - Fixed the "useTasksState must be used inside <TasksProvider>" runtime error by correcting where the providers are mounted.
 - Fixed invisible buttons caused by the custom `brand-*` colour tokens not applying; switched to Tailwind's built-in `indigo` palette.
-- <add anything else you really changed: styling, wording, behaviour, etc.>
+
 
 **What I verified myself**
 - Ran the app locally and manually checked: <creating/editing a task, drag-and-drop, status dropdown, filters in the URL, discard warning, migration notice>.
 - Ran `npm test`, `npm run typecheck` and `npm run lint`.
-- <add keyboard-only / screen reader checks only if you really did them>
+
 
 **Things I understand well enough to explain**
 - Why state uses `useReducer` + Context, how filters sync with the URL, and how the storage schema versioning and migration work.
