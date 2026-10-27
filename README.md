@@ -66,11 +66,6 @@ Changing one task's status re-rendered every card (30 of 30 in a 30-task board).
 
 > **To do before submitting:** also confirm this once in React DevTools → Profiler ("Highlight updates when components render") and add a screenshot or sentence here, since the assignment asks for DevTools evidence.
 
-## AI assistance disclosure
-## AI assistance disclosure
-
-I used Claude (Anthropic) as a coding assistant for this assignment.
-
 **Where AI was used**
 - Generating the initial project structure, the component library (`src/components`), the task state layer, the versioned storage/migration layer, the tests and the first drafts of these docs.
 - Debugging help when I hit issues while running the app.
